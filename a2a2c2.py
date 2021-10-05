@@ -4,6 +4,7 @@ def testNumbers(nums, updateFreq):
     i = 1
     updateNum = nums / updateFreq
     solutions = []
+    startTime = datetime.now()
     while i < nums:
         if ((i**2 + i**2)**(1/2)).is_integer():
             print("solution: " + str(i))
@@ -11,5 +12,5 @@ def testNumbers(nums, updateFreq):
         if (i % updateFreq == 0):
             print(datetime.now().strftime("%H:%M:%S.%f")[:-3] + ": Program  on " + str(i) + "/" + str(nums) + ", set " + str(int(i/updateFreq)) + "/" + str(int(updateNum)) + " of " + str(updateFreq))
         i += 1
-    print("From zero to " + str(nums) + ", found " + str(len(solutions)) + " solutions:")
+    print("From zero to " + str(nums) + ", found " + str(len(solutions)) + " solutions in " + str((datetime.now() - startTime).total_seconds()) + " minutes:")
     print(solutions)
