@@ -5,6 +5,7 @@ def testNumbers(nums, updateFreq):
     i = 1
     updateNum = nums / updateFreq
     solutions = []
+    startTime = datetime.now()
 
     #while loop; checks every number from one to the input top value.
     while i < nums:
@@ -20,5 +21,5 @@ def testNumbers(nums, updateFreq):
         i += 1
 
     #outputs the number of solutions found, and prints the array of them
-    print("From zero to " + str(nums) + ", found " + str(len(solutions)) + " solutions:")
+    print("From zero to " + str(nums) + ", found " + str(len(solutions)) + " solutions in " + str((datetime.now() - startTime).total_seconds()) + " minutes:")
     print(solutions)
